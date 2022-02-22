@@ -24,6 +24,7 @@ route::group(['prefix' => 'admin' ],function(){
     Route::get('/product/create','AdminPagesController@product_create')->name('admin.product.create');
     
   
+    Route::post('/product/create','AdminPagesController@product_store')->name('admin.product.store');
   });
 
 
