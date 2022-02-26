@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index page</title>
-   @include('partials.styles')
+   @include('frontend.partials.styles')
 </head>
 <body>
     
@@ -16,16 +16,16 @@
 <!-- Navbar ends -->
 
 <!-- sidebar+content starts -->
-@include('partials.nav')
+@include('frontend.partials.nav')
  @yield('content')
 
 <!-- sidebar+content ends -->
 
 
- @include('partials.footer')
+ @include('frontend.partials.footer')
 
 </div>
 
-@include('partials.scripts')
+@include('frontend.partials.scripts')
 </body>
 </html>

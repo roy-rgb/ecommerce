@@ -1,5 +1,5 @@
 
-@extends('layouts.master')
+@extends('frontend.layouts.master')
 
 {{-- Sidebar + content --}}
 
@@ -10,7 +10,7 @@
 
   <div class="row">
      <div class="col-md-4">
-        @include('partials.product-sidebar')
+        @include('frontend.partials.product-sidebar')
      </div>
 
      <div class="col-md-8">
