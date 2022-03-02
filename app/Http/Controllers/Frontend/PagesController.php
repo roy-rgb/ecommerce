@@ -10,7 +10,8 @@ class PagesController extends Controller
 {
     public function index()
     {
-      return view('frontend.pages.index');
+      $products= Product::orderBy('id','desc')->get();
+      return view('frontend.pages.index',compact('products'));
     }
 
     public function contact()

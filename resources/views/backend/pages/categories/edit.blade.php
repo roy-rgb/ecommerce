@@ -31,8 +31,10 @@
     <div class="form-group">
       <label for="exampleInputPassword1">Parent Category</label>
         <select class="form-control" name="parent_id">
+          
           <option value="">select a primary category</option>
-          @foreach ($main_categories as $cat)
+
+           @foreach ($main_categories as $cat)
               <option value="{{ $cat->id}}" {{ $cat->id == $category->parent_id ? 'selected': '' }}>{{$cat->name}}</option>
               
           @endforeach
