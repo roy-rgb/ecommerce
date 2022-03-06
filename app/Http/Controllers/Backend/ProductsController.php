@@ -55,8 +55,8 @@ class ProductsController extends Controller
         $product->price= $request->price;
         $product->quantity= $request->quantity;
 
-        $product->category_id =1;
-        $product->brand_id =1;
+        $product->category_id =$request->category_id;
+        $product->brand_id =$request->brand_id;
         $product->admin_id =1;
         $product->slug = $request->title;
         $product->save();
@@ -76,6 +76,8 @@ class ProductsController extends Controller
             'description' => 'required',
             'price' => 'required|numeric',
             'quantity' => 'required|numeric',
+            'category_id' => 'required|numeric',
+            'brand_id' => 'required|numeric',
             
         ]);
 
@@ -90,8 +92,8 @@ class ProductsController extends Controller
         $product->price= $request->price;
         $product->quantity= $request->quantity;
 
-        $product->category_id =1;
-        $product->brand_id =1;
+        $product->category_id =$request->category_id;
+        $product->brand_id =$request->brand_id;
         $product->admin_id =1;
         $product->slug = $request->title;
         $product->save();

@@ -1,9 +1,10 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
+
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link" href="index.html">
-          <i class="ti-shield menu-icon"></i>
-          <span class="menu-title">Dashboard</span>
+        <a class="nav-link" href="{{ route('admin.index') }}">
+          
+          <span class="menu-title"  >Dashboard</span>
         </a>
       </li>
 
@@ -43,14 +44,26 @@
       </li>
 
 
-
-
+           
       <li class="nav-item">
-        <a class="nav-link" href="pages/forms/basic_elements.html">
-          <i class="ti-layout-list-post menu-icon"></i>
-          <span class="menu-title">Form elements</span>
+        <a class="nav-link" data-toggle="collapse" href="#brand-pages" aria-expanded="false" aria-controls="ui-basic">
+          <i class="ti-palette menu-icon"></i>
+          <span class="menu-title">Manage Brand</span>
+          <i class="menu-arrow"></i>
         </a>
+
+        <div class="collapse" id="brand-pages">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="{{route('admin.brands')}}">manage brand</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{route('admin.brand.create')}}">Add brand</a></li>
+
+          </ul>
+        </div>
+
       </li>
+
+
+   
       <li class="nav-item">
         <a class="nav-link" href="pages/charts/chartjs.html">
           <i class="ti-pie-chart menu-icon"></i>

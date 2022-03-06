@@ -14,8 +14,19 @@
     padding:20px;
     margin-top:20px;
     background:yellow ;
-    opacity: .3;
-   
-    
-    
+    opacity: .3; 
 }
+
+.product-item{
+   
+    border: yellow 5px solid;
+}
+
+.child-rows{
+    margin-left: 20px;
+    border-left: black 2px solid;
+  
+}
+
+
+

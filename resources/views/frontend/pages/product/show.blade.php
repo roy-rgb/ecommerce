@@ -1,6 +1,9 @@
 
 @extends('frontend.layouts.master')
 
+  @section('title')
+      {{$product->title}} | ecommerce 
+  @endsection
 
 @section('content')
 
@@ -19,7 +22,7 @@
 
     @foreach ($product->images as $image)
 
-      <div class="carousel-item {{ $i==1? 'active': '' }}">
+      <div class="product-item carousel-item {{ $i==1? 'active': '' }}">
         <img class="d-block w-100" src="{!! asset('images/products/' . $image->image) !!}" alt="First slide">
       </div>
      @php
@@ -28,12 +31,6 @@
         
     @endforeach
 
-    
-
-
-   
-  
-   
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -45,13 +42,26 @@
   </a>
 </div>
 
+<div class="mt-3">
+   Category <span class="badge badge-info">{{ $product->category->name}}</span>
+  <p> Brand  <span class="badge badge-info"> {{ $product->brand->name }} </span> </p>
+
+  </div>
+
      </div>
 
      <div class="col-md-8">
          <div class="widget">
              <h3>{{$product->title}}</h3>
+             <h4>{{$product->price}} Taka 
+                <span class="badge badge-warning">
+                    {{ $product->quantity <1 ? 'no item is available' : 'item in stock-' . $product->quantity}}
+                </span> </h4>
          </div>
-         
+         <hr>
+         <div>
+             {!! $product->description !!}
+         </div>
      </div>
   </div>
 
