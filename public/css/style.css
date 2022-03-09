@@ -1,6 +1,11 @@
 
-
+   .mr-auto, .mx-auto{
+    margin-right: auto!important;
+    margin-top: 20px;
+    margin-bottom: -3px;
+   }
 .bg-light {
+
     background-color: #ffffb2!important;
 }
 

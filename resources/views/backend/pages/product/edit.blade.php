@@ -39,6 +39,38 @@
           </div>
 
           <div class="form-group">
+            <label for="exampleInputEmail1">select category</label>
+
+            <select name="category_id" id="category_id">
+              <option value="">select a category</option>
+
+              @foreach (App\Models\Category::orderBy('name','asc')->where('parent_id', NULL)->get() as $parent)
+              <option value="{{ $parent->id }}" {{ $parent->id == $product->category->id ? 'selected' : ''}} >{{ $parent->name }}</option>
+
+                @foreach (App\Models\Category::orderBy('name','asc')->where('parent_id', $parent->id)->get() as $child)
+                <option value="{{ $child->id }}" {{ $child->id == $product->category->id ? 'selected' : ''}} > --->{{ $child->name }}</option>
+                @endforeach
+              
+              @endforeach
+             
+            </select>
+          </div>
+
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">select brand</label>
+
+            <select name="brand_id" id="brand_id">
+              <option value="">select a brand</option>
+
+              @foreach (App\Models\Brand::orderBy('name','asc')->get() as $br)
+              <option value="{{ $br->id }}" {{ $br->id == $product->brand->id ? 'selected' : ''}}>{{ $br->name }}</option>
+              @endforeach
+             
+            </select>
+          </div>
+
+          <div class="form-group">
             <label for="product_image">Product Image</label>
             <div class="row">
 

@@ -16,10 +16,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'Frontend\PagesController@index')->name('index');
 Route::get('/contact', 'Frontend\PagesController@contact')->name('contact');
 
-Route::get('/products', 'Frontend\ProductsController@index')->name('products');
-Route::get('/product/{slug}', 'Frontend\ProductsController@show')->name('products.show');
-Route::get('/search', 'Frontend\PagesController@search')->name('search');
+route::group(['prefix' => 'products' ],function(){
 
+Route::get('/', 'Frontend\ProductsController@index')->name('products');
+Route::get('/{slug}', 'Frontend\ProductsController@show')->name('products.show');
+Route::get('/new/search', 'Frontend\PagesController@search')->name('search');
+
+   //category routes
+
+
+Route::get('/categories', 'Frontend\CategoriesController@index')->name('categories.index');
+Route::get('/category/{id}', 'Frontend\CategoriesController@show')->name('categories.show');
+
+});
 
 
               // admin routes
@@ -81,3 +90,7 @@ Route::get('/search', 'Frontend\PagesController@search')->name('search');
   });
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
