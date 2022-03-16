@@ -62,6 +62,41 @@
 
       </li>
 
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#division-pages" aria-expanded="false" aria-controls="ui-basic">
+          <i class="ti-palette menu-icon"></i>
+          <span class="menu-title">Manage division</span>
+          <i class="menu-arrow"></i>
+        </a>
+
+        <div class="collapse" id="division-pages">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="{{route('admin.divisions')}}">manage division</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{route('admin.division.create')}}">Add division</a></li>
+
+          </ul>
+        </div>
+
+      </li>
+
+            
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#district-pages" aria-expanded="false" aria-controls="ui-basic">
+          <i class="ti-palette menu-icon"></i>
+          <span class="menu-title">Manage district</span>
+          <i class="menu-arrow"></i>
+        </a>
+
+        <div class="collapse" id="district-pages">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="{{route('admin.districts')}}">manage district</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{route('admin.district.create')}}">Add district</a></li>
+
+          </ul>
+        </div>
+
+      </li>
+
 
    
       <li class="nav-item">

@@ -81,6 +81,33 @@ Route::get('/category/{id}', 'Frontend\CategoriesController@show')->name('catego
           });
 
 
+          
+          route::group(['prefix' => '/divisions' ],function(){
+          
+      
+               Route::get('/','Backend\DivisionsController@index')->name('admin.divisions');    
+               Route::get('/create','Backend\DivisionsController@create')->name('admin.division.create');
+               Route::get('/edit/{id}','Backend\DivisionsController@edit')->name('admin.division.edit'); 
+               Route::post('/store','Backend\DivisionsController@store')->name('admin.division.store');
+               Route::post('/division/edit/{id}','Backend\DivisionsController@update')->name('admin.division.update');
+               Route::post('/division/delete/{id}','Backend\DivisionsController@delete')->name('admin.division.delete');
+      
+          });
+
+
+          route::group(['prefix' => '/districts' ],function(){
+          
+      
+               Route::get('/','Backend\DistrictsController@index')->name('admin.districts');    
+               Route::get('/create','Backend\DistrictsController@create')->name('admin.district.create');
+               Route::get('/edit/{id}','Backend\DistrictsController@edit')->name('admin.district.edit'); 
+               Route::post('/store','Backend\DistrictsController@store')->name('admin.district.store');
+               Route::post('/district/edit/{id}','Backend\DistrictsController@update')->name('admin.district.update');
+               Route::post('/district/delete/{id}','Backend\DistrictsController@delete')->name('admin.district.delete');
+      
+          });
+
+
 
 
 

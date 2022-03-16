@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master')
 
 @section('content')
-<div class="container">
+<div class="container mt-2">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -70,20 +70,53 @@
                         </div>
 
 
-                        
                         <div class="row mb-3">
-                            <label for="streent_address" class="col-md-4 col-form-label text-md-end">{{ __('Street Address') }}</label>
+                            <label for="division_id" class="col-md-4 col-form-label text-md-end">{{ __('Division') }}</label>
 
                             <div class="col-md-6">
-                                <input id="streent_address" type="text" class="form-control @error('streent_address') is-invalid @enderror" name="streent_address" value="{{ old('streent_address') }}" required autocomplete="streent_address">
 
-                                @error('streent_address')
+                                <select name="division_id" class="form-control">
+
+                                    <option value="">Please select your division</option>
+                                    @foreach ($divisions as $division)
+                                        <option value="{{ $division->id }}">{{ $division->name }}</option>
+                                    @endforeach
+                                </select>
+                             
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="district_id" class="col-md-4 col-form-label text-md-end">{{ __('District') }}</label>
+
+                            <div class="col-md-6">
+
+                                <select name="district_id" class="form-control">
+
+                                    <option value="">Please select your district</option>
+                                    @foreach ($districts as $district)
+                                        <option value="{{ $district->id }}">{{ $district->name }}</option>
+                                    @endforeach
+                                </select>
+                             
+                            </div>
+                        </div>
+
+
+                        
+                         <div class="row mb-3">
+                            <label for="street_address" class="col-md-4 col-form-label text-md-end">{{ __('Street street_address') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="street_address" type="text" class="form-control @error('street_address') is-invalid @enderror" name="street_address" value="{{ old('street_address') }}" required autocomplete="street_address">
+
+                                @error('street_address')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+                        </div> 
 
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>

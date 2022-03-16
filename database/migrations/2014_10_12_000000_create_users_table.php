@@ -17,12 +17,12 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('first_name');
             $table->string('last_name')->nullable();
-            $table->string('username')->unique();
-            $table->string('phone_no')->unique();
-            $table->string('email')->unique();
+            $table->string('username');
+            $table->string('phone_no');
+            $table->string('email');
             $table->string('password');
 
-            $table->string('street_address');
+            $table->string('street_address')->nullable();
             $table->unsignedInteger('division_id')->comment('Division Table ID');
             $table->unsignedInteger('district_id')->comment('District Table ID');
 
