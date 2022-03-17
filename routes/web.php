@@ -30,6 +30,9 @@ Route::get('/category/{id}', 'Frontend\CategoriesController@show')->name('catego
 
 });
 
+    ///user routes
+    Route::get('/token/{token}', 'Frontend\VerificationController@verify')->name('user.verification');
+
 
               // admin routes
     route::group(['prefix' => 'admin' ],function(){
