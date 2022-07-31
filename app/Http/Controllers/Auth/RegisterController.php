@@ -119,8 +119,11 @@ class RegisterController extends Controller
             'ip_address' => request()->ip(),
             'remember_token' => Str::random(50),
             'status' => 0,
+
+          
  
         ]);
+       
 
         $user->notify(new VerifyRegistration($user));
         session()->flash('success','A confirmation email has sent to you.. Please check and confirm your email');

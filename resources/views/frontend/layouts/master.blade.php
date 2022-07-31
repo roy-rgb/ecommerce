@@ -20,6 +20,7 @@
 
 <!-- sidebar+content starts -->
 @include('frontend.partials.nav')
+@include('frontend.partials.messages')
  @yield('content')
 
 <!-- sidebar+content ends -->

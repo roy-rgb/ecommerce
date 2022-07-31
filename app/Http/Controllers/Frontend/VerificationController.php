@@ -13,7 +13,7 @@ class VerificationController extends Controller
         $user = User::where('remember_token', $token)->first();
         if(!is_null($user)){
             $user->status = 1;
-            $user->remember_token =NULL;
+            // $user->remember_token =NULL;
             $user->save();
             session()->flash('success','you are registered successfully!! Login Now');
             return redirect('login');
